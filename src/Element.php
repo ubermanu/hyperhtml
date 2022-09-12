@@ -59,6 +59,7 @@ class Element implements Node
         $output = "<{$this->tag}";
 
         foreach ($this->attributes as $key => $value) {
+            $value = \htmlspecialchars($value);
             $output .= " {$key}=\"{$value}\"";
         }
 

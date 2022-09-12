@@ -45,4 +45,14 @@ class ElementTest extends \PHPUnit\Framework\TestCase
         $element = new Element('br');
         $this->assertEquals('<br>', $element->render());
     }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testElementAttributeEscaped(): void
+    {
+        $element = new Element('p', ['class' => 'test"']);
+        $this->assertEquals('<p class="test&quot;"></p>', $element->render());
+    }
 }
