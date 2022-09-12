@@ -35,4 +35,14 @@ class ElementTest extends \PHPUnit\Framework\TestCase
         $element = new Element('p', [], [new Element('span')]);
         $this->assertEquals('<p><span></span></p>', $element->render());
     }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testElementClosingTag(): void
+    {
+        $element = new Element('br');
+        $this->assertEquals('<br>', $element->render());
+    }
 }
