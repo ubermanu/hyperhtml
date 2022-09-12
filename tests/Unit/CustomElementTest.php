@@ -14,7 +14,6 @@ class CustomElementTest extends \PHPUnit\Framework\TestCase
     {
         $element = new CustomInput();
 
-        // TODO: Fix the closing tag
-        $this->assertEquals('<input type="text"></input>', $element->render());
+        $this->assertEquals('<input type="text">', $element->render());
     }
 }

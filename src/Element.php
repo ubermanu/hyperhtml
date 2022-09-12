@@ -5,6 +5,26 @@ namespace Ubermanu\PhpElements;
 class Element implements Node
 {
     /**
+     * List of the self-closing tags.
+     */
+    const SELF_CLOSING_TAGS = [
+        'area',
+        'base',
+        'br',
+        'col',
+        'embed',
+        'hr',
+        'img',
+        'input',
+        'link',
+        'meta',
+        'param',
+        'source',
+        'track',
+        'wbr',
+    ];
+
+    /**
      * @var string
      */
     protected string $tag = 'div';
@@ -44,11 +64,13 @@ class Element implements Node
 
         $output .= '>';
 
-        foreach ($this->children as $child) {
-            $output .= $child->render();
-        }
+        if (!in_array($this->tag, self::SELF_CLOSING_TAGS)) {
+            foreach ($this->children as $child) {
+                $output .= $child->render();
+            }
 
-        $output .= "</{$this->tag}>";
+            $output .= "</{$this->tag}>";
+        }
 
         return $output;
     }
