@@ -177,7 +177,7 @@ class Element implements Node
 
         $output .= '>';
 
-        if (!in_array($this->tag, self::SELF_CLOSING_TAGS)) {
+        if (!$this->isSelfClosing()) {
             foreach ($this->getChildren() as $child) {
                 $output .= $child->render();
             }
@@ -186,5 +186,15 @@ class Element implements Node
         }
 
         return $output;
+    }
+
+    /**
+     * Returns TRUE if the tag is considered as self-closing.
+     *
+     * @return bool
+     */
+    public function isSelfClosing(): bool
+    {
+        return in_array($this->tag, self::SELF_CLOSING_TAGS);
     }
 }
