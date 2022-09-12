@@ -1,5 +1,9 @@
 {
     "name": "ubermanu/php-elements",
+    "description": "HTML elements abstraction for PHP",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Emmanuel Vodor",
