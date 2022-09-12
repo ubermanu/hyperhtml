@@ -20,7 +20,7 @@ class ElementTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
-    public function testElementWithProps(): void
+    public function testElementWithAttrs(): void
     {
         $element = new Element('p', ['class' => 'test']);
         $this->assertEquals('<p class="test"></p>', $element->render());
