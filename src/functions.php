@@ -47,7 +47,7 @@ function el(): Element
         return new Element($args[0], $args[1], $args[2]);
     }
 
-    throw new \InvalidArgumentException('You must pass at least one argument to the el() function');
+    throw new \InvalidArgumentException('You must pass at most three arguments to the el() function');
 }
 
 /**
