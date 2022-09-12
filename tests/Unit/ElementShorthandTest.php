@@ -20,18 +20,18 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      */
     public function testElementWithText(): void
     {
-        $element = el('p', 'test');
-        $this->assertEquals('<p>test</p>', $element->render());
+        $element = el('p', 'Fish');
+        $this->assertEquals('<p>Fish</p>', $element->render());
     }
 
     /**
      * @covers
      * @return void
      */
-    public function testElementWithProps(): void
+    public function testElementWithAttributesAndText(): void
     {
-        $element = el('p', ['class' => 'test'], '');
-        $this->assertEquals('<p class="test"></p>', $element->render());
+        $element = el('p', ['class' => 'test'], 'Mouse');
+        $this->assertEquals('<p class="test">Mouse</p>', $element->render());
     }
 
     /**
@@ -41,22 +41,22 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
     public function testElementWithChildren(): void
     {
         $element = el('p', [
-            el('span')
+            el('span', 'Cat')
         ]);
 
-        $this->assertEquals('<p><span></span></p>', $element->render());
+        $this->assertEquals('<p><span>Cat</span></p>', $element->render());
     }
 
     /**
      * @covers
      * @return void
      */
-    public function testElementWithPropsAndChildren(): void
+    public function testElementWithAttributesAndChildren(): void
     {
         $element = el('p', ['class' => 'test'], [
-            el('span')
+            el('span', 'Dog')
         ]);
 
-        $this->assertEquals('<p class="test"><span></span></p>', $element->render());
+        $this->assertEquals('<p class="test"><span>Dog</span></p>', $element->render());
     }
 }
