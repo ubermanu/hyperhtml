@@ -55,4 +55,14 @@ class ElementTest extends \PHPUnit\Framework\TestCase
         $element = new Element('p', ['class' => 'test"']);
         $this->assertEquals('<p class="test&quot;"></p>', $element->render());
     }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testElementWithSelectorAsTag(): void
+    {
+        $element = new Element('p.test');
+        $this->assertEquals('<p class="test"></p>', $element->render());
+    }
 }
