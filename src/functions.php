@@ -25,6 +25,19 @@ function el(): Element
         if (is_string($args[1])) {
             return new Element($args[0], [], [new Text($args[1])]);
         }
+
+        if (count($args[1]) === 0) {
+            return new Element($args[0]);
+        }
+
+        $isNodeList = array_map(function ($item) {
+            return $item instanceof Node;
+        }, $args[1]);
+
+        if (in_array(false, $isNodeList, true)) {
+            return new Element($args[0], $args[1]);
+        }
+
         return new Element($args[0], [], $args[1]);
     }
 

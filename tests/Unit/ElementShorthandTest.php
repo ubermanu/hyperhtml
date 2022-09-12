@@ -38,6 +38,16 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
+    public function testElementWithAttributesOnly(): void
+    {
+        $element = el('input', ['class' => 'test']);
+        $this->assertEquals('<input class="test">', $element->render());
+    }
+
+    /**
+     * @covers
+     * @return void
+     */
     public function testElementWithChildren(): void
     {
         $element = el('p', [
