@@ -6,7 +6,6 @@ use Ubermanu\PhpElements\Node;
 use Ubermanu\PhpElements\Text;
 
 /**
- * TODO: Allow passing a class as tag
  * @return Element
  */
 function el(): Element
