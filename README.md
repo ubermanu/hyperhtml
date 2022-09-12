@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/ubermanu/php-elements/actions/workflows/tests.yml/badge.svg)](https://github.com/ubermanu/php-elements/actions/workflows/tests.yml)
 
-Integrated HTML elements for PHP.
+HTML elements abstraction for PHP.
 
 ## Installation
 
@@ -19,25 +19,22 @@ echo el('p', 'Hello world!')->render(); // <p>Hello world!</p>
 
 ## Custom elements
 
+You can create custom elements by extending the `Element` class.
+
 ```php
 <?php
-class MyElement extends \Ubermanu\PhpElements\CustomElement
+$customElement = new class extends \Ubermanu\PhpElements\Element
 {
     protected string $tag = 'p';
-    
-    protected array $attributes = [
-        'title' => 'My custom element',
-    ];
+    protected array $attributes = [ 'title' => 'My custom element' ];
 }
-```
 
-Render the element:
-
-```php
-echo (new MyElement())->render(); // <p title="My custom element"></p>
+echo $customElement->render(); // <p title="My custom element"></p>
 ```
 
 ## Example
+
+The following example will render a simple HTML login form.
 
 ```php
 <?php
