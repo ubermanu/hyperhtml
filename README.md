@@ -1,5 +1,7 @@
 # PHP Elements
 
+[![Tests](https://github.com/ubermanu/php-elements/actions/workflows/tests.yml/badge.svg)](https://github.com/ubermanu/php-elements/actions/workflows/tests.yml)
+
 Integrated HTML elements for PHP.
 
 ## Installation
