@@ -2,9 +2,9 @@
 
 namespace Ubermanu\PhpElements\Tests\Fixtures;
 
-use Ubermanu\PhpElements\CustomElement;
+use Ubermanu\PhpElements\Element;
 
-final class CustomHeading extends CustomElement
+final class CustomHeading extends Element
 {
     /**
      * @var string

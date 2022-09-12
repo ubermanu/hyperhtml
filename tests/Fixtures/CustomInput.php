@@ -2,9 +2,9 @@
 
 namespace Ubermanu\PhpElements\Tests\Fixtures;
 
-use Ubermanu\PhpElements\CustomElement;
+use Ubermanu\PhpElements\Element;
 
-final class CustomInput extends CustomElement
+final class CustomInput extends Element
 {
     /**
      * @var string
