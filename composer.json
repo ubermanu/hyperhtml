@@ -1,0 +1,28 @@
+{
+    "name": "ubermanu/php-elements",
+    "authors": [
+        {
+            "name": "Emmanuel Vodor",
+            "email": "manu@paca.happy-dev.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ubermanu\\PhpElements\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ubermanu\\PhpElements\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
