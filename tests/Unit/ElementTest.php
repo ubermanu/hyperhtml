@@ -65,4 +65,14 @@ class ElementTest extends \PHPUnit\Framework\TestCase
         $element = new Element('p.test');
         $this->assertEquals('<p class="test"></p>', $element->render());
     }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testElementBoolAttribute(): void
+    {
+        $element = new Element('input', ['checked' => true]);
+        $this->assertEquals('<input checked>', $element->render());
+    }
 }

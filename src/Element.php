@@ -171,8 +171,14 @@ class Element implements Node
         $attributes = array_filter($this->getAttributes());
 
         foreach ($attributes as $key => $value) {
-            $value = \htmlspecialchars($value);
-            $output .= " {$key}=\"{$value}\"";
+            if (is_bool($value)) {
+                if ($value) {
+                    $output .= " {$key}";
+                }
+            } else {
+                $value = \htmlspecialchars($value);
+                $output .= " {$key}=\"{$value}\"";
+            }
         }
 
         $output .= '>';
