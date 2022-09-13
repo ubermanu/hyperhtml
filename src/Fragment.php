@@ -27,4 +27,12 @@ final class Fragment implements Node
 
         return $output;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->render();
+    }
 }

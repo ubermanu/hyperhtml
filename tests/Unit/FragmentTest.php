@@ -26,6 +26,17 @@ class FragmentTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
+    public function testEmptyFragment(): void
+    {
+        $fragment = new Fragment();
+
+        $this->assertEquals('', $fragment->render());
+    }
+
+    /**
+     * @covers
+     * @return void
+     */
     public function testFragmentWithText(): void
     {
         $fragment = new Fragment([
@@ -48,5 +59,19 @@ class FragmentTest extends \PHPUnit\Framework\TestCase
         ]);
 
         $this->assertEquals('<p></p><p></p>', $fragment->render());
+    }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testFragmentToString(): void
+    {
+        $fragment = new Fragment([
+            new Element('p'),
+            new Text('Crocodile')
+        ]);
+
+        $this->assertEquals('<p></p>Crocodile', (string)$fragment);
     }
 }

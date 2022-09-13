@@ -7,14 +7,14 @@ class Text implements Node
     /**
      * @var string
      */
-    protected string $content;
+    protected string $content = '';
 
     /**
      * @param string|null $content
      */
     public function __construct(?string $content = null)
     {
-        $this->content ??= $content;
+        $this->content = $content ?? $this->content;
     }
 
     /**
@@ -23,5 +23,13 @@ class Text implements Node
     public function render(): string
     {
         return \htmlspecialchars($this->content);
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->render();
     }
 }

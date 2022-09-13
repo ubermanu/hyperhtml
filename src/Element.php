@@ -203,4 +203,12 @@ class Element implements Node
     {
         return in_array($this->tag, self::SELF_CLOSING_TAGS);
     }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->render();
+    }
 }
