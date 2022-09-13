@@ -14,7 +14,7 @@ composer require ubermanu/php-elements
 
 ```php
 <?php
-echo el('p', 'Hello world!')->render(); // <p>Hello world!</p>
+echo el('p', 'Hello world!'); // <p>Hello world!</p>
 ```
 
 ## Custom elements
@@ -29,7 +29,7 @@ $customElement = new class extends \Ubermanu\PhpElements\Element
     protected array $attributes = [ 'title' => 'My custom element' ];
 }
 
-echo $customElement->render(); // <p title="My custom element"></p>
+echo $customElement; // <p title="My custom element"></p>
 ```
 
 ## Example
@@ -53,5 +53,5 @@ $form = el('form', [
     el('button', 'Login'),
 ]);
 
-echo $form->render();
+echo $form;
 ```
