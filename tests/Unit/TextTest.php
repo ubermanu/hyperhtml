@@ -14,6 +14,10 @@ class TextTest extends \PHPUnit\Framework\TestCase
     {
         $text = new Text('Lizard');
         $this->assertEquals('Lizard', $text->render());
+
+        $text = new Text();
+        $text->setContent('Dragon');
+        $this->assertEquals('Dragon', $text->render());
     }
 
     /**
