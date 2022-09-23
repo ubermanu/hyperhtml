@@ -9,6 +9,9 @@ class Comment implements Node
      */
     protected string $content = '';
 
+    /**
+     * @param string $content
+     */
     public function __construct(string $content = '')
     {
         $this->content = $content;
