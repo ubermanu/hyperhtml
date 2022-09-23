@@ -20,13 +20,15 @@ function el(): Element
         return new Element($args[0]);
     }
 
+    $element = new Element($args[0]);
+
     if (count($args) === 2) {
         if (is_string($args[1])) {
-            return new Element($args[0], [], [new Text($args[1])]);
+            return $element->appendChild(new Text($args[1]));
         }
 
         if (count($args[1]) === 0) {
-            return new Element($args[0]);
+            return $element;
         }
 
         $isNodeList = array_map(function ($item) {
@@ -34,17 +36,17 @@ function el(): Element
         }, $args[1]);
 
         if (in_array(false, $isNodeList, true)) {
-            return new Element($args[0], $args[1]);
+            return $element->addAttributes($args[1]);
         }
 
-        return new Element($args[0], [], $args[1]);
+        return $element->setChildren($args[1]);
     }
 
     if (count($args) === 3) {
         if (is_string($args[2])) {
-            return new Element($args[0], $args[1], [new Text($args[2])]);
+            return $element->addAttributes($args[1])->appendChild(new Text($args[2]));
         }
-        return new Element($args[0], $args[1], $args[2]);
+        return $element->addAttributes($args[1])->setChildren($args[2]);
     }
 
     throw new \InvalidArgumentException('You must pass at most three arguments to the el() function');
