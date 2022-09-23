@@ -1,6 +1,7 @@
 <?php
 
 use Ubermanu\PhpElements\Element;
+use Ubermanu\PhpElements\ElementFactory;
 use Ubermanu\PhpElements\Fragment;
 use Ubermanu\PhpElements\Node;
 use Ubermanu\PhpElements\Text;
@@ -16,11 +17,12 @@ function el(): Element
         throw new \InvalidArgumentException('You must pass at least one argument to the el() function');
     }
 
-    if (count($args) === 1) {
-        return new Element($args[0]);
-    }
+    $factory = new ElementFactory();
+    $element = $factory->create($args[0]);
 
-    $element = new Element($args[0]);
+    if (count($args) === 1) {
+        return $element;
+    }
 
     if (count($args) === 2) {
         if (is_string($args[1])) {

@@ -60,16 +60,6 @@ class ElementTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
-    public function testElementWithSelectorAsTag(): void
-    {
-        $element = new Element('p.test');
-        $this->assertEquals('<p class="test"></p>', $element->render());
-    }
-
-    /**
-     * @covers
-     * @return void
-     */
     public function testElementBoolAttribute(): void
     {
         $element = new Element('input', ['checked' => true]);

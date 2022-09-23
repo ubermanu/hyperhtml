@@ -40,27 +40,13 @@ class Element implements Node
     protected array $children = [];
 
     /**
-     * @var SelectorParser
-     * @internal
-     */
-    protected SelectorParser $selectorParser;
-
-    /**
      * @param string|null $tag
-     * @param string[]|null $attributes
-     * @param Node[]|null $children
+     * @param string[] $attributes
+     * @param Node[] $children
      */
-    public function __construct(?string $tag = null, ?array $attributes = null, ?array $children = null)
+    public function __construct(?string $tag = null, array $attributes = [], array $children = [])
     {
-        $this->selectorParser ??= new SelectorParser();
-
-        if (!empty($tag)) {
-            $selector = $this->selectorParser->parse($tag);
-            $this->tag = $selector['tag'];
-            $this->setAttribute('id', $selector['id']);
-            $this->setAttribute('class', implode(' ', $selector['classes']));
-            $this->addAttributes($selector['attributes']);
-        }
+        $this->tag = $tag ?? $this->tag;
 
         if (!empty($attributes)) {
             $this->addAttributes($attributes);

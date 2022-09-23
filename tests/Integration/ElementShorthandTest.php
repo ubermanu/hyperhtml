@@ -69,4 +69,14 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals('<p class="test"><span>Dog</span></p>', $element->render());
     }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testElementWithSelectorAsTag(): void
+    {
+        $element = el('p.test');
+        $this->assertEquals('<p class="test"></p>', $element->render());
+    }
 }
