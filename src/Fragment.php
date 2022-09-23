@@ -2,7 +2,7 @@
 
 namespace Ubermanu\PhpElements;
 
-final class Fragment implements Node
+class Fragment implements Node
 {
     /**
      * @var Node[]
