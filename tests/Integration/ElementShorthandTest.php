@@ -1,6 +1,6 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Unit;
+namespace Ubermanu\PhpElements\Tests\Integration;
 
 class ElementShorthandTest extends \PHPUnit\Framework\TestCase
 {

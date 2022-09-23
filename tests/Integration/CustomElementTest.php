@@ -1,6 +1,6 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests;
+namespace Ubermanu\PhpElements\Tests\Integration;
 
 use Ubermanu\PhpElements\Tests\Fixtures\CustomHeading;
 use Ubermanu\PhpElements\Tests\Fixtures\CustomInput;
