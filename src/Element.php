@@ -52,7 +52,7 @@ class Element implements Node
      */
     public function __construct(?string $tag = null, ?array $attributes = null, ?array $children = null)
     {
-        $this->selectorParser = new SelectorParser();
+        $this->selectorParser ??= new SelectorParser();
 
         if (!empty($tag)) {
             $selector = $this->selectorParser->parse($tag);
