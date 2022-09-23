@@ -29,4 +29,18 @@ class CustomElementTest extends \PHPUnit\Framework\TestCase
         $h3 = new CustomHeading(3);
         $this->assertEquals('<h3></h3>', $h3->render());
     }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testInlineCustomElement(): void
+    {
+        $customElement = new class extends \Ubermanu\PhpElements\Element {
+            protected string $tag = 'p';
+            protected array $attributes = ['title' => 'My custom element'];
+        };
+
+        $this->assertEquals('<p title="My custom element"></p>', $customElement->render());
+    }
 }
