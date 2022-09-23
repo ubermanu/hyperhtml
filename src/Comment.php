@@ -9,12 +9,27 @@ class Comment implements Node
      */
     protected string $content = '';
 
-    /**
-     * @param string|null $content
-     */
-    public function __construct(?string $content = null)
+    public function __construct(string $content = '')
     {
-        $this->content = $content ?? $this->content;
+        $this->content = $content;
+    }
+
+    /**
+     * @param string $content
+     * @return $this
+     */
+    public function setContent(string $content): Comment
+    {
+        $this->content = $content;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content;
     }
 
     /**

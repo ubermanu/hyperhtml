@@ -14,6 +14,10 @@ class CommentTest extends \PHPUnit\Framework\TestCase
     {
         $comment = new Comment('Some comment');
         $this->assertEquals('<!-- Some comment -->', $comment->render());
+
+        $comment = new Comment();
+        $comment->setContent('Some comment through accessor');
+        $this->assertEquals('<!-- Some comment through accessor -->', $comment->render());
     }
 
     /**
