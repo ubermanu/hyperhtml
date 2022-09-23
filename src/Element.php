@@ -155,6 +155,16 @@ class Element implements Node
     }
 
     /**
+     * @param Node[] $children
+     * @return $this
+     */
+    public function setChildren(array $children): Element
+    {
+        $this->children = $children;
+        return $this;
+    }
+
+    /**
      * @return Node[]
      */
     public function getChildren(): array
