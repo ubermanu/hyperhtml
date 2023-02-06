@@ -2,7 +2,7 @@
 
 namespace Ubermanu\Hyperhtml;
 
-class Fragment implements Node
+class Fragment implements Node, \Stringable
 {
     /**
      * @var Node[]

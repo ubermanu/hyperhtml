@@ -2,7 +2,7 @@
 
 namespace Ubermanu\Hyperhtml;
 
-class Element implements Node
+class Element implements Node, \Stringable
 {
     /**
      * List of the self-closing tags.

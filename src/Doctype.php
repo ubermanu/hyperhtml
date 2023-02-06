@@ -2,7 +2,7 @@
 
 namespace Ubermanu\Hyperhtml;
 
-class Doctype implements Node
+class Doctype implements Node, \Stringable
 {
     /**
      * @var string

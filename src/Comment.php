@@ -2,7 +2,7 @@
 
 namespace Ubermanu\Hyperhtml;
 
-class Comment implements Node
+class Comment implements Node, \Stringable
 {
     /**
      * @var string

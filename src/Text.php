@@ -2,7 +2,7 @@
 
 namespace Ubermanu\Hyperhtml;
 
-class Text implements Node
+class Text implements Node, \Stringable
 {
     /**
      * @var string
