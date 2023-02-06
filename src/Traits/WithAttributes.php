@@ -20,7 +20,7 @@ trait WithAttributes
     }
 
     /**
-     * @return string[]
+     * @return array
      */
     public function getAttributes(): array
     {
@@ -50,9 +50,9 @@ trait WithAttributes
 
     /**
      * @param string $name
-     * @return string|null
+     * @return mixed
      */
-    public function getAttribute(string $name): ?string
+    public function getAttribute(string $name): mixed
     {
         return $this->attributes[$name] ?? null;
     }

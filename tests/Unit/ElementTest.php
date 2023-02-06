@@ -79,4 +79,27 @@ class ElementTest extends \PHPUnit\Framework\TestCase
         $element = new Element('p');
         $this->assertEquals('<p></p>', (string)$element);
     }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testGetAttribute(): void
+    {
+        $element = new Element('p');
+        $element->setAttribute('class', 'test');
+        $element->setAttribute('valid', true);
+        $this->assertEquals('test', $element->getAttribute('class'));
+        $this->assertTrue($element->getAttribute('valid'));
+    }
+
+    /**
+     * @covers
+     * @return void
+     */
+    public function testGetAttributeNotSet(): void
+    {
+        $element = new Element('p');
+        $this->assertNull($element->getAttribute('class'));
+    }
 }
