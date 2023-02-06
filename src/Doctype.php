@@ -1,6 +1,6 @@
 <?php
 
-namespace Ubermanu\PhpElements;
+namespace Ubermanu\Hyperhtml;
 
 class Doctype implements Node
 {
@@ -24,19 +24,19 @@ class Doctype implements Node
      */
     public function render(): string
     {
-        $result = '<!DOCTYPE ' . $this->name;
+        $html = '<!DOCTYPE ' . $this->name;
 
         if (!empty($this->publicId)) {
-            $result .= ' PUBLIC "' . $this->publicId . '"';
+            $html .= ' PUBLIC "' . $this->publicId . '"';
         }
 
         if (!empty($this->systemId)) {
-            $result .= ' "' . $this->systemId . '"';
+            $html .= ' "' . $this->systemId . '"';
         }
 
-        $result .= '>';
+        $html .= '>';
 
-        return $result;
+        return $html;
     }
 
     /**

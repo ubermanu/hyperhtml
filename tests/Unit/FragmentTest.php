@@ -1,10 +1,12 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Unit;
+namespace Ubermanu\Hyperhtml\Tests\Unit;
 
-use Ubermanu\PhpElements\Element;
-use Ubermanu\PhpElements\Fragment;
-use Ubermanu\PhpElements\Text;
+use Ubermanu\Hyperhtml\Element;
+use Ubermanu\Hyperhtml\Fragment;
+use Ubermanu\Hyperhtml\Text;
+use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\frag;
 
 class FragmentTest extends \PHPUnit\Framework\TestCase
 {
@@ -54,8 +56,8 @@ class FragmentTest extends \PHPUnit\Framework\TestCase
     public function testFragmentShortHand(): void
     {
         $fragment = frag([
-            el('p'),
-            el('p')
+            h('p'),
+            h('p')
         ]);
 
         $this->assertEquals('<p></p><p></p>', $fragment->render());

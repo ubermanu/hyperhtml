@@ -1,14 +1,9 @@
 <?php
 
-namespace Ubermanu\PhpElements;
+namespace Ubermanu\Hyperhtml;
 
 class ElementFactory
 {
-    /**
-     * @var array
-     */
-    protected array $elements = [];
-
     /**
      * @var SelectorParser
      */
@@ -25,10 +20,9 @@ class ElementFactory
 
     /**
      * @param string $selector
-     * @param array $attributes
      * @return Element
      */
-    public function create(string $selector, array $attributes = []): Element
+    public function create(string $selector): Element
     {
         $result = $this->selectorParser->parse($selector);
 
@@ -36,7 +30,6 @@ class ElementFactory
         $element->setAttribute('id', $result['id']);
         $element->setAttribute('class', implode(' ', $result['classes']));
         $element->addAttributes($result['attributes']);
-        $element->addAttributes($attributes);
 
         return $element;
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Unit;
+namespace Ubermanu\Hyperhtml\Tests\Unit;
 
-use Ubermanu\PhpElements\Doctype;
+use Ubermanu\Hyperhtml\Doctype;
 
 class DoctypeTest extends \PHPUnit\Framework\TestCase
 {
@@ -10,7 +10,7 @@ class DoctypeTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
-    public function testDoctype(): void
+    public function testRender(): void
     {
         $doctype = new Doctype();
         $this->assertEquals('<!DOCTYPE html>', $doctype->render());

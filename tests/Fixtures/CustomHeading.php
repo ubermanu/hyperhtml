@@ -1,22 +1,16 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Fixtures;
+namespace Ubermanu\Hyperhtml\Tests\Fixtures;
 
-use Ubermanu\PhpElements\Element;
+use Ubermanu\Hyperhtml\Element;
 
 final class CustomHeading extends Element
 {
-    /**
-     * @var string
-     */
-    protected string $tag = 'h1';
-
     /**
      * @param int $level
      */
     public function __construct(int $level)
     {
-        parent::__construct();
-        $this->tag = "h{$level}";
+        parent::__construct("h{$level}");
     }
 }

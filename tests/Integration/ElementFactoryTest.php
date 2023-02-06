@@ -1,10 +1,10 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Integration;
+namespace Ubermanu\Hyperhtml\Tests\Integration;
 
-use Ubermanu\PhpElements\Element;
-use Ubermanu\PhpElements\ElementFactory;
-use Ubermanu\PhpElements\SelectorParser;
+use Ubermanu\Hyperhtml\Element;
+use Ubermanu\Hyperhtml\ElementFactory;
+use Ubermanu\Hyperhtml\SelectorParser;
 
 class ElementFactoryTest extends \PHPUnit\Framework\TestCase
 {

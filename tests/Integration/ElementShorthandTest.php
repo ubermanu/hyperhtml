@@ -1,6 +1,8 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Integration;
+namespace Ubermanu\Hyperhtml\Tests\Integration;
+
+use function Ubermanu\Hyperhtml\html as h;
 
 class ElementShorthandTest extends \PHPUnit\Framework\TestCase
 {
@@ -10,7 +12,7 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      */
     public function testElement(): void
     {
-        $element = el('p');
+        $element = h('p');
         $this->assertEquals('<p></p>', $element->render());
     }
 
@@ -20,7 +22,7 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      */
     public function testElementWithText(): void
     {
-        $element = el('p', 'Fish');
+        $element = h('p', 'Fish');
         $this->assertEquals('<p>Fish</p>', $element->render());
     }
 
@@ -30,7 +32,7 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      */
     public function testElementWithAttributesAndText(): void
     {
-        $element = el('p', ['class' => 'test'], 'Mouse');
+        $element = h('p', ['class' => 'test'], 'Mouse');
         $this->assertEquals('<p class="test">Mouse</p>', $element->render());
     }
 
@@ -40,7 +42,7 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      */
     public function testElementWithAttributesOnly(): void
     {
-        $element = el('input', ['class' => 'test']);
+        $element = h('input', ['class' => 'test']);
         $this->assertEquals('<input class="test">', $element->render());
     }
 
@@ -50,8 +52,8 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      */
     public function testElementWithChildren(): void
     {
-        $element = el('p', [
-            el('span', 'Cat')
+        $element = h('p', [
+            h('span', 'Cat')
         ]);
 
         $this->assertEquals('<p><span>Cat</span></p>', $element->render());
@@ -63,8 +65,8 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      */
     public function testElementWithAttributesAndChildren(): void
     {
-        $element = el('p', ['class' => 'test'], [
-            el('span', 'Dog')
+        $element = h('p', ['class' => 'test'], [
+            h('span', 'Dog')
         ]);
 
         $this->assertEquals('<p class="test"><span>Dog</span></p>', $element->render());
@@ -76,7 +78,7 @@ class ElementShorthandTest extends \PHPUnit\Framework\TestCase
      */
     public function testElementWithSelectorAsTag(): void
     {
-        $element = el('p.test');
+        $element = h('p.test');
         $this->assertEquals('<p class="test"></p>', $element->render());
     }
 }

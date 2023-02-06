@@ -1,8 +1,8 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Unit;
+namespace Ubermanu\Hyperhtml\Tests\Unit;
 
-use Ubermanu\PhpElements\SelectorParser;
+use Ubermanu\Hyperhtml\SelectorParser;
 
 class SelectorParserTest extends \PHPUnit\Framework\TestCase
 {

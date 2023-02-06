@@ -1,6 +1,6 @@
 <?php
 
-namespace Ubermanu\PhpElements;
+namespace Ubermanu\Hyperhtml;
 
 class SelectorParser
 {

@@ -1,15 +1,11 @@
 <?php
 
-use Ubermanu\PhpElements\Element;
-use Ubermanu\PhpElements\ElementFactory;
-use Ubermanu\PhpElements\Fragment;
-use Ubermanu\PhpElements\Node;
-use Ubermanu\PhpElements\Text;
+namespace Ubermanu\Hyperhtml;
 
 /**
  * @return Element
  */
-function el(): Element
+function html(): Element
 {
     $args = func_get_args();
 

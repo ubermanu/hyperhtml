@@ -1,20 +1,17 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Fixtures;
+namespace Ubermanu\Hyperhtml\Tests\Fixtures;
 
-use Ubermanu\PhpElements\Element;
+use Ubermanu\Hyperhtml\Element;
 
 final class CustomInput extends Element
 {
     /**
-     * @var string
+     * @param string $type
      */
-    protected string $tag = 'input';
-
-    /**
-     * @var string[]
-     */
-    protected array $attributes = [
-        'type' => 'text',
-    ];
+    public function __construct(string $type = 'text')
+    {
+        parent::__construct('input');
+        $this->setAttribute('type', $type);
+    }
 }

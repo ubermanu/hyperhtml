@@ -1,6 +1,6 @@
 <?php
 
-namespace Ubermanu\PhpElements;
+namespace Ubermanu\Hyperhtml;
 
 class Fragment implements Node
 {
@@ -40,13 +40,13 @@ class Fragment implements Node
      */
     public function render(): string
     {
-        $output = '';
+        $html = '';
 
         foreach ($this->children as $child) {
-            $output .= $child->render();
+            $html .= $child->render();
         }
 
-        return $output;
+        return $html;
     }
 
     /**

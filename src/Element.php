@@ -1,6 +1,6 @@
 <?php
 
-namespace Ubermanu\PhpElements;
+namespace Ubermanu\Hyperhtml;
 
 class Element implements Node
 {
@@ -27,10 +27,10 @@ class Element implements Node
     /**
      * @var string
      */
-    protected string $tag = 'div';
+    protected string $tag;
 
     /**
-     * @var string[]
+     * @var array
      */
     protected array $attributes = [];
 
@@ -40,23 +40,11 @@ class Element implements Node
     protected array $children = [];
 
     /**
-     * @param string|null $tag
-     * @param string[] $attributes
-     * @param Node[] $children
+     * @param string $tag
      */
-    public function __construct(?string $tag = null, array $attributes = [], array $children = [])
+    public function __construct(string $tag)
     {
-        $this->tag = $tag ?? $this->tag;
-
-        if (!empty($attributes)) {
-            $this->addAttributes($attributes);
-        }
-
-        if (!empty($children)) {
-            foreach ($children as $child) {
-                $this->appendChild($child);
-            }
-        }
+        $this->tag = $tag;
     }
 
     /**
@@ -89,10 +77,10 @@ class Element implements Node
 
     /**
      * @param string $name
-     * @param string $value
+     * @param mixed $value
      * @return $this
      */
-    public function setAttribute(string $name, string $value): Element
+    public function setAttribute(string $name, mixed $value): Element
     {
         $this->attributes[$name] = $value;
         return $this;
@@ -163,31 +151,52 @@ class Element implements Node
      */
     public function render(): string
     {
-        $output = "<{$this->tag}";
-        $attributes = array_filter($this->getAttributes());
+        $html = "<{$this->tag}" . $this->renderAttributes() . '>';
 
-        foreach ($attributes as $key => $value) {
+        if ($this->isSelfClosing()) {
+            return $html;
+        }
+
+        return $html . $this->renderChildren() . "</{$this->tag}>";
+    }
+
+    /**
+     * @return string
+     */
+    protected function renderAttributes(): string
+    {
+        $html = '';
+
+        foreach ($this->getAttributes() as $key => $value) {
             if (is_bool($value)) {
                 if ($value) {
-                    $output .= " {$key}";
+                    $html .= " {$key}";
                 }
-            } else {
+            } elseif (is_string($value) && !empty($value)) {
                 $value = \htmlspecialchars($value);
-                $output .= " {$key}=\"{$value}\"";
+                $html .= " {$key}=\"{$value}\"";
             }
         }
 
-        $output .= '>';
+        return $html;
+    }
 
-        if (!$this->isSelfClosing()) {
-            foreach ($this->getChildren() as $child) {
-                $output .= $child->render();
+    /**
+     * @return string
+     */
+    protected function renderChildren(): string
+    {
+        $html = '';
+
+        foreach ($this->getChildren() as $child) {
+            if ($child instanceof Node) {
+                $html .= $child->render();
+            } elseif (is_string($child)) {
+                $html .= $child;
             }
-
-            $output .= "</{$this->tag}>";
         }
 
-        return $output;
+        return $html;
     }
 
     /**

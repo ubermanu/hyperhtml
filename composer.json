@@ -1,5 +1,5 @@
 {
-    "name": "ubermanu/php-elements",
+    "name": "ubermanu/hyperhtml",
     "description": "HTML elements abstraction for PHP",
     "type": "library",
     "license": "MIT",
@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Ubermanu\\PhpElements\\": "src/"
+            "Ubermanu\\Hyperhtml\\": "src/"
         },
         "files": [
             "src/functions.php"
@@ -20,7 +20,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Ubermanu\\PhpElements\\Tests\\": "tests/"
+            "Ubermanu\\Hyperhtml\\Tests\\": "tests/"
         }
     },
     "require": {

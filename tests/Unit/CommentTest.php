@@ -1,8 +1,8 @@
 <?php
 
-namespace Ubermanu\PhpElements\Tests\Unit;
+namespace Ubermanu\Hyperhtml\Tests\Unit;
 
-use Ubermanu\PhpElements\Comment;
+use Ubermanu\Hyperhtml\Comment;
 
 class CommentTest extends \PHPUnit\Framework\TestCase
 {
@@ -10,7 +10,7 @@ class CommentTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
-    public function testComment(): void
+    public function testRender(): void
     {
         $comment = new Comment('Some comment');
         $this->assertEquals('<!-- Some comment -->', $comment->render());
@@ -24,7 +24,7 @@ class CommentTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
-    public function testCommentToString(): void
+    public function testRenderToString(): void
     {
         $comment = new Comment('Some comment to string');
         $this->assertEquals('<!-- Some comment to string -->', (string)$comment);
@@ -34,7 +34,7 @@ class CommentTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
-    public function testEmptyComment(): void
+    public function testRenderEmptyComment(): void
     {
         $comment = new Comment();
         $this->assertEquals('', $comment->render());
@@ -44,7 +44,7 @@ class CommentTest extends \PHPUnit\Framework\TestCase
      * @covers
      * @return void
      */
-    public function testCommentEscapeTags(): void
+    public function testRenderEscapeTags(): void
     {
         $comment = new Comment('Some comment with <tag>');
         $this->assertEquals('<!-- Some comment with &lt;tag&gt; -->', $comment->render());
