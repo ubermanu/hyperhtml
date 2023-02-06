@@ -121,3 +121,21 @@ $customElement = h('div', [
 
 echo $customElement; // <div><my-element></my-element></div>
 ```
+
+### Classnames
+
+The `classnames` function can be used to generate a string of class names from an array and its truthy values.
+
+```php
+use function Ubermanu\Hyperhtml\classnames;
+
+$div = h('div', [
+    'class' => classnames([
+        'someClassName' => true,
+        'anotherClassName' => true,
+        'disabledClassName' => false,
+    ]),
+]);
+
+echo $div; // <div class="someClassName anotherClassName"></div>
+```

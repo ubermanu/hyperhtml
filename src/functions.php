@@ -58,3 +58,31 @@ function fragment(array $children): Fragment
 {
     return new Fragment($children);
 }
+
+/**
+ * A utility function to create a class attribute string, based on an array of
+ * class names and their truthiness.
+ *
+ * @param ...$classNames
+ * @return string
+ */
+function classnames(...$classNames): string
+{
+    $classes = [];
+
+    foreach ($classNames as $className) {
+        if (is_string($className) && $className) {
+            $classes[] = $className;
+        }
+
+        if (is_array($className)) {
+            foreach ($className as $key => $value) {
+                if ($value && is_string($key) && $key) {
+                    $classes[] = $key;
+                }
+            }
+        }
+    }
+
+    return implode(' ', array_unique($classes));
+}
