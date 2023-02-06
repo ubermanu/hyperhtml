@@ -6,7 +6,7 @@ use Ubermanu\Hyperhtml\Element;
 use Ubermanu\Hyperhtml\Fragment;
 use Ubermanu\Hyperhtml\Text;
 use function Ubermanu\Hyperhtml\html as h;
-use function Ubermanu\Hyperhtml\frag;
+use function Ubermanu\Hyperhtml\fragment;
 
 class FragmentTest extends \PHPUnit\Framework\TestCase
 {
@@ -55,7 +55,7 @@ class FragmentTest extends \PHPUnit\Framework\TestCase
      */
     public function testFragmentShortHand(): void
     {
-        $fragment = frag([
+        $fragment = fragment([
             h('p'),
             h('p')
         ]);

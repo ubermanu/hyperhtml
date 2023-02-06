@@ -54,7 +54,7 @@ function html(): Element
  * @param Node[] $children
  * @return Fragment
  */
-function frag(array $children): Fragment
+function fragment(array $children): Fragment
 {
     return new Fragment($children);
 }
