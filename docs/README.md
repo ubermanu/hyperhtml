@@ -1,6 +1,6 @@
 <h1>Hyperhtml 🦾</h1>
 
-HTML elements abstraction for PHP inspired by [hyperhtml](https://github.com/WebReflection/hyperHTML).
+HTML elements abstraction for PHP inspired by [hyperscript](https://github.com/hyperhype/hyperscript).
 
 ## Installation
 
