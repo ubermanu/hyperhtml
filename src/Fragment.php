@@ -4,10 +4,7 @@ namespace Ubermanu\Hyperhtml;
 
 class Fragment implements Node, \Stringable
 {
-    /**
-     * @var Node[]
-     */
-    protected array $children;
+    use Traits\WithChildren;
 
     /**
      * @param Node[] $children
@@ -18,35 +15,11 @@ class Fragment implements Node, \Stringable
     }
 
     /**
-     * @param array $children
-     * @return $this
-     */
-    public function setChildren(array $children): Fragment
-    {
-        $this->children = $children;
-        return $this;
-    }
-
-    /**
-     * @return Node[]
-     */
-    public function getChildren(): array
-    {
-        return $this->children;
-    }
-
-    /**
      * @inheritDoc
      */
     public function render(): string
     {
-        $html = '';
-
-        foreach ($this->children as $child) {
-            $html .= $child->render();
-        }
-
-        return $html;
+        return $this->renderChildren();
     }
 
     /**
