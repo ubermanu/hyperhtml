@@ -86,3 +86,16 @@ function classnames(...$classNames): string
 
     return implode(' ', array_unique($classes));
 }
+
+/**
+ * Render a string as HTML without escaping it.
+ * This is useful for rendering HTML that you know is safe, such as a
+ * translation string.
+ *
+ * @param string $html
+ * @return UnsafeHtml
+ */
+function unsafe(string $html): UnsafeHtml
+{
+    return new UnsafeHtml($html);
+}
