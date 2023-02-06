@@ -99,3 +99,18 @@ function unsafe(string $html): UnsafeHtml
 {
     return new UnsafeHtml($html);
 }
+
+/**
+ * Create a document with a body containing the given elements.
+ * This is useful for rendering a full HTML document, including the <html>,
+ * <head> and <body> tags.
+ *
+ * @param array $elements
+ * @return Document
+ */
+function document(array $elements = []): Document
+{
+    $doc = new Document();
+    $doc->getBody()->setChildren($elements);
+    return $doc;
+}
