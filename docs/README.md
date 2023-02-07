@@ -84,10 +84,10 @@ See the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Doc
 use function Ubermanu\Hyperhtml\fragment;
 use function Ubermanu\Hyperhtml\h;
 
-$fragment = fragment(
+$fragment = fragment([
     h('li', 'One'),
     h('li', 'Two'),
-);
+]);
 
 $list = h('ul', [
     $fragment,
