@@ -2,7 +2,7 @@
 
 namespace Ubermanu\Hyperhtml\Tests\Integration;
 
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 
 class ElementShorthandTest extends \PHPUnit\Framework\TestCase
 {

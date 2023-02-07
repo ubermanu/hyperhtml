@@ -11,7 +11,7 @@ composer require ubermanu/hyperhtml
 ## Usage
 
 ```php
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 
 echo h('p', 'Hello world!'); // <p>Hello world!</p>
 ```
@@ -23,7 +23,7 @@ If the attribute value is empty or false, the attribute will not be rendered.\
 If the attribute value is true, the attribute will be rendered without a value.
 
 ```php
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 
 $div = h('div', [
     'class' => 'someClassName',
@@ -40,7 +40,7 @@ The children are passed as an array to the third argument of the `html` function
 The children can be strings, numbers, or other elements.
 
 ```php
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 
 $div = h('div', [], [
     h('p', 'Hello world!'),
@@ -55,7 +55,7 @@ echo $div; // <div><p>Hello world!</p><p>Hello world!</p></div>
 The following example will render a simple HTML login form.
 
 ```php
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 
 $form = h('form', [
     h('input', [
@@ -82,7 +82,7 @@ See the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Doc
 
 ```php
 use function Ubermanu\Hyperhtml\fragment;
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 
 $fragment = fragment(
     h('li', 'One'),
@@ -105,7 +105,7 @@ It can be useful to create a custom `html` function that will return an instance
 
 ```php
 use function Ubermanu\Hyperhtml\Element;
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 
 class CustomElement extends Element
 {

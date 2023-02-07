@@ -5,7 +5,7 @@ namespace Ubermanu\Hyperhtml;
 /**
  * @return Element
  */
-function html(): Element
+function h(): Element
 {
     $args = func_get_args();
 

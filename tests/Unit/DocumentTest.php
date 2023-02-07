@@ -4,7 +4,7 @@ namespace Ubermanu\Hyperhtml\Tests\Unit;
 
 use Ubermanu\Hyperhtml\Doctype;
 use Ubermanu\Hyperhtml\Document;
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 
 class DocumentTest extends \PHPUnit\Framework\TestCase
 {

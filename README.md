@@ -14,7 +14,7 @@ composer require ubermanu/hyperhtml
 
 ```php
 <?php
-use function Ubermanu\Hyperhtml\html as h;
+use function Ubermanu\Hyperhtml\h;
 echo h('p', 'Hello world!'); // <p>Hello world!</p>
 ```
 
