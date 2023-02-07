@@ -104,7 +104,7 @@ Rendering custom elements is as simple as extending the `Element` class and pass
 It can be useful to create a custom `html` function that will return an instance of the custom element.
 
 ```php
-use function Ubermanu\Hyperhtml\Element;
+use Ubermanu\Hyperhtml\Element;
 use function Ubermanu\Hyperhtml\h;
 
 class CustomElement extends Element
